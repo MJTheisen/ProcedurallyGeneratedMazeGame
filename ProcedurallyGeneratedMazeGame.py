@@ -5,7 +5,7 @@ import sys
 # Initialize pygame
 pygame.init()
 
-# Constants
+# CONSTANTS
 WIDTH, HEIGHT = 820, 620
 CELL_SIZE = 20
 ROWS, COLS = HEIGHT // CELL_SIZE, WIDTH // CELL_SIZE
@@ -51,8 +51,6 @@ congratulations_rect = congratulations_text.get_rect(center=(WIDTH // 2, HEIGHT 
 
 play_again_text = font.render("Play again? 'Y' , or quit? 'Q' ", True, (100, 216, 230))  # Pale light blue
 play_again_rect = play_again_text.get_rect(center=(WIDTH // 2, HEIGHT // 2 + font_size))
-y_again_rect = play_again_text.get_rect(center=(WIDTH // 2, HEIGHT // 2 + 50))
-
 
 def draw_maze():
     for row in range(ROWS):
