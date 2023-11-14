@@ -76,7 +76,7 @@ def draw_player():
     pygame.draw.rect(screen, GREEN, (player_pos[1] * CELL_SIZE, player_pos[0] * CELL_SIZE, CELL_SIZE, CELL_SIZE))
 
 
-# Main loop
+# Main game loop
 clock = pygame.time.Clock()
 game_over = False
 
@@ -102,9 +102,9 @@ while not game_over:
         draw_finish()
         draw_player()
 
-        # Draw semi-transparent overlay
+        # semi-transparent overlay
         overlay = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
-        overlay.fill((0, 0, 0, 200))  # Adjust the alpha value for transparency
+        overlay.fill((0, 0, 0, 200))  # Adjust the transparency
         screen.blit(overlay, (0, 0))
 
 
@@ -112,7 +112,7 @@ while not game_over:
         screen.blit(play_again_text, play_again_rect)
         pygame.display.flip()
 
-        # Allow player to choose to play again or quit
+        # play again or quit
         choice = None
         while choice not in ['y', 'q']:
             for event in pygame.event.get():
@@ -134,7 +134,7 @@ while not game_over:
         else:
             game_over = True
 
-        pygame.time.delay(2000)  # Display the message for 2 seconds
+        pygame.time.delay(1000)  # Wait a sec.
 
     else:
         screen.fill(WHITE)
@@ -143,7 +143,8 @@ while not game_over:
         draw_player()
         pygame.display.flip()
 
-    clock.tick(20)  # Limit the frames per second
+    clock.tick(20)  # Limit frames. 
+    # The green block would fly off the screen and through the walls.
 
 
 
